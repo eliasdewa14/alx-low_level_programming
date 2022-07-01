@@ -11,15 +11,20 @@
 int main(void)
 
 {
+	char ch;
+	int a;
+	long int b;
+	long long int c;
+	float d;
 	printf("Size of a char: %lu byte(s)\n",
-(unsigned long)sizeof(char));
+(unsigned long)sizeof(ch));
 	printf("Size of an int: %lu byte(s)\n",
-(unsigned long)sizeof(int));
+(unsigned long)sizeof(a));
 	printf("Size of a long int: %lu byte(s)\n",
-(unsigned long)sizeof(long int));
+(unsigned long)sizeof(b));
 	printf("Size of a long long int: %lu byte(s)\n",
-(unsigned long)sizeof(long long int));
+(unsigned long)sizeof(c));
 	printf("Size of a float: %lu byte(s)\n",
-(unsigned long)sizeof(float));
+(unsigned long)sizeof(d));
 	return (0);
 }
