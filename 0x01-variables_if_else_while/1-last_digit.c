@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+
 /**
  * main - prints the last digit of random
  * number is greater than, less than 5, or is 0
@@ -14,19 +15,17 @@ int main(void)
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 	/* your code goes here */
-	if (n % 10 < 5)
+	printf("Last gitit of %d is %d and is ", n, n % 10);
+	if (n % 10 < 6)
 	{
-		printf("Last digit of %d is %d and is less
-than 5 and not 0\n", n, n % 10);
+		printf("Less than 6 and not 0\n");
 	}
 	else if (n % 10 > 5)
 	{
-		printf("Last digit of %d is %d and is greater
-than 5\n", n, n % 10);
+		printf("greater than 5\n");
 	}
 	else
 	{
-		printf("Last digit of %d is %d and is 0\n", n,
-n % 10);
+		printf("0\n");
 	return (0);
 }
