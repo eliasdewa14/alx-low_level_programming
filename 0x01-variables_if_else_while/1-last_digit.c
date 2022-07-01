@@ -1,12 +1,11 @@
 #include <stdio.h>
-#include <time.h>
 #include <stdlib.h>
+#include <time.h>
 /**
- * main - prints the last digit of a random
- * number is greater than 5, less than 5 or
- * is equal to 0
+ * main - prints the last digit of random
+ * number is greater than, less than 5, or is 0
  *
- * Return: 0 if success
+ * Return: 0 if Success
  */
 int main(void)
 {
@@ -18,7 +17,7 @@ int main(void)
 	if (n % 10 < 5)
 	{
 		printf("Last digit of %d is %d and is less
-6 and not 0\n", n, n % 10);
+than 5 and not 0\n", n, n % 10);
 	}
 	else if (n % 10 > 5)
 	{
@@ -27,7 +26,7 @@ than 5\n", n, n % 10);
 	}
 	else
 	{
-		printf("Last digit of %d is %d and is 0\n",
-n, n % 10);
+		printf("Last digit of %d is %d and is 0\n", n,
+n % 10);
 	return (0);
 }
