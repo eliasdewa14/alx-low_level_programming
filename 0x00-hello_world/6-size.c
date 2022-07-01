@@ -3,7 +3,8 @@
 
 
 /**
- * main -  Prints the size of various types on the computer it is compiled and run on
+ * main -  Prints the size of various types
+ * on the computer it is compiled and run on
  *
  * Return: Always 0 (Success)
  */
@@ -16,6 +17,7 @@ int main(void)
 	long int b;
 	long long int c;
 	float d;
+
 	printf("Size of a char: %lu byte(s)\n",
 (unsigned long)sizeof(ch));
 	printf("Size of an int: %lu byte(s)\n",
