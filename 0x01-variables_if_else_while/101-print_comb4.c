@@ -33,6 +33,6 @@ int main(void)
 		}
 		j = '0';
 	}
-	puchar('\n');
+	putchar('\n');
 	return (0);
 }
