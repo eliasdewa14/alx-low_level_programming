@@ -3,7 +3,7 @@
 
 /**
  * main - print the summ of all multiple of 3 and 5
- * 
+ *
  * Return: 0 if success
  */
 int main(void)
