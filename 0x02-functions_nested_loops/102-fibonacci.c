@@ -9,7 +9,7 @@
 int main(void)
 {
 	int i;
-	int fib[50];
+	int fab[50];
 
 	fab[0] = 1;
 	fab[1] = 2;
