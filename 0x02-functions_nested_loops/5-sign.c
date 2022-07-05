@@ -9,9 +9,9 @@
  */
 int print_sign(int c)
 {
-	char pos = '+, ';
-	char neg = '-, ';
-	char zero = '0, ';
+	char pos = '+';
+	char neg = '-';
+	char zero = '0';
 
 	if (c > 0)
 	{
