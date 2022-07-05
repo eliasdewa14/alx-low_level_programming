@@ -3,25 +3,23 @@
 /**
  * jack_bauer - prints every minute of the day of Jack Bauer
  *
- * Return: minutes
+ * Return: time of the day
  */
 void jack_bauer(void)
 {
-	int hr = 0;
-	int min = 0;
-
-	while (hr < 24)
+	int hr;
+	int min;
+	
+	for (hr = 0; hr < 24; hr++)
 	{
-		while (min < 60)
+		for (min = 0; min < 60; min++)
 		{
 			_putchar((hr / 10) + '0');
 			_putchar((hr % 10) + '0');
 			_putchar(':');
 			_putchar((min / 10) + '0');
 			_putchar((min % 10) + '0');
-			min++;
 			_putchar('\n');
 		}
-		hr++;
 	}
 }
