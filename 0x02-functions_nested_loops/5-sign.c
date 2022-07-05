@@ -9,16 +9,23 @@
  */
 int print_sign(int c)
 {
+	char pos = '+, ';
+	char neg = '-, ';
+	char zero = '0, ';
+
 	if (c > 0)
 	{
-		return ("+," + 1);
+		_putchar(pos);
+		return (1);
 	}
 	else if (c < 0)
 	{
-		return ("-, " + -1);
+		_putchar(neg);
+		return (-1);
 	}
 	else
 	{
-		return ("0, " + 0);
+		_putchar(zero);
+		return (0);
 	}
 }
