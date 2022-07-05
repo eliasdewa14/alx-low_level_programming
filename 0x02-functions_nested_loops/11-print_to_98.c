@@ -19,7 +19,7 @@ void print_to_98(int n)
 				_putchar(',');
 				_putchar(' ');
 			}
-			_putchar(i);
+			_putchar(i + '0');
 		}
 	}
 	else if (n > 98)
@@ -31,12 +31,12 @@ void print_to_98(int n)
                                 _putchar(',');
                                 _putchar(' ');
                         }
-                        _putchar(i);
+                        _putchar(i + '0');
                 }
 	}
 	else
 	{
-		_putchar(n);
+		_putchar(n + '0');
 	}
 }
 
