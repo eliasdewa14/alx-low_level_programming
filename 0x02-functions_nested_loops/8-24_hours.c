@@ -5,7 +5,7 @@
  *
  * Return: minutes
  */
-int jack_bauer()
+void jack_bauer(void)
 {
 	int hr = 0;
 	int min = 0;
