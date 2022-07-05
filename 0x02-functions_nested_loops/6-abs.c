@@ -2,18 +2,18 @@
 
 /**
  * _abs - print the absolute value of the number
- * @num: input number for testing
+ * @int: input number for testing
  *
  * Return: The absolute of the number
  */
-int _abs(int num)
+int _abs(int)
 {
-	if (num < 0)
+	if (int < 0)
 	{
-		return (num * (-1));
+		return (int * (-1));
 	}
 	else
 	{
-		return (num);
+		return (int);
 	}
 }
