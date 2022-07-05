@@ -5,7 +5,7 @@
  *
  * Return: 0 always success
  */
-int main(void)
+int print_alphabet(void)
 {
 	char ch = 'a';
 
