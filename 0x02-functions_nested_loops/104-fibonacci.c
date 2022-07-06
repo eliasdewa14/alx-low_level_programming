@@ -18,7 +18,7 @@ int main(void)
 		c = a + b;
 		a = b;
 		b = c;
-		printf("%lu, ", c);
+		printf("%lu", c);
 		if (i != 98)
 			printf(", ");
 		i++;
