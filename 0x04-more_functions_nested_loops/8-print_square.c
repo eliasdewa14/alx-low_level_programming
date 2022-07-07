@@ -18,5 +18,5 @@ void print_square(int size)
 		}
 		_putchar('\n');
 	}
-	_puchar('\n');
+	_putchar('\n');
 }
