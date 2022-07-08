@@ -8,14 +8,17 @@
  */
 int main(void)
 {
-	long i, n = 612852475143;
+	long i, largest = 0, n = 612852475143;
 
-	for (i = 2; i < n; i++)
+	for (i = 2; n > 1; i++)
 	{
-		if (n % i == 0)
-			n = n / i;
+		while (n % i == 0)
+		{
+			n /= i;
+			largest = i;
+		}
 	}
-	printf("%li\n", n);
+	printf("%ld\n", largest);
 
 	return (0);
 }
