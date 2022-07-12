@@ -1,4 +1,3 @@
-#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -45,5 +44,6 @@ int main(void)
 	}
 	r[a] = '\0';
 	printf("%s", r);
+	printf("\n");
 	return (0);
 }
