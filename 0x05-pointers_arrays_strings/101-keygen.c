@@ -5,50 +5,45 @@
 
 /**
  * main - generate random password
- * @n: input parameter
+ * 
  * Return: 0 for success
  */
-void randomPassword(int n)
+int main()
 {
-	int i = 0;
-	int random = 0;
+	int a, b, c, d;
+	
+	char ch[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	
+	char r[58];
 
-
-	srand((unsigned int)(time(NULL)));
 	
-	char letter[] = "abcdefghijklmnoqprstuvwyzx";
-	char LETTER[] = "ABCDEFGHIJKLMNOQPRSTUYWVZX";
-	char symbols[] = "!@#$^&*?";
-	char password[n];
+	srand(time(NULL));
 	
-	random = rand() % 3;
-	
-	for (i = 0; i < n; i++)
+	while (d != 2772)
 	{
-		if (random == 1)
+		a = c = d = 0;
+		
+		while ((2772 - 122) > d)
 		{
-			password[i] = symbols[rand() % 8];
-			random = rand() % 3;
-			printf("%c", password[i]);
+			b = rand() % 62;
+			r[a] = ch[b];
+			d += ch[b];
+			a++;
 		}
-		else if (random == 2)
+		
+		while (ch[c])
 		{
-			password[i] = LETTER[rand() % 26];
-			random = rand() % 3;
-			printf("%c", password[i]);
-		}
-		else {
-			password[i] = letter[rand() % 26];
-			random = rand() % 3;
-			printf("%c", password[i]);
+			if (ch[c] == (2772 - d))
+			{
+				r[a] = ch[c];
+				d += ch[c];
+				a++;
+				break;
+			}
+			c++;
 		}
 	}
-}
-int main(void)
-{
-	randomPassword(10);
-
-	printf("\n");
-
+	r[a] = '\0';
+	printf("%s", r);
 	return (0);
 }
