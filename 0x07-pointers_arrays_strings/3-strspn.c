@@ -14,7 +14,7 @@ unsigned int _strspn(char *s, char *accept)
 	while (s[i])
 	{
 		j = 0;
-		while (accept[j])
+		while (accept[j] != s[i])
 		{
 			if (accept[j] == s[i])
 				count++;
