@@ -13,6 +13,8 @@ unsigned int _strspn(char *s, char *accept)
 
 	while (s[i])
 	{
+		if (s[i] == ',' || s[i] == ' ')
+			break;
 		j = 0;
 		while (accept[j])
 		{
