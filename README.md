@@ -1,2 +1,1 @@
-ALX-SE Program
-    Low-level programming & Algorithm
+ALX-SE Program - Low-level programming & Algorithm
