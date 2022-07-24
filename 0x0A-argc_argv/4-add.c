@@ -9,7 +9,7 @@
  *
  * Return: 0 for sucess
  */
-int main(int argc, char **argv)
+int main(int argc, char *argv)
 {
 	int add = 0, i;
 
@@ -17,8 +17,7 @@ int main(int argc, char **argv)
 	{
 		for (i = 1; i < argc; i++)
 		{
-			if ((*argv[i] >= 'a' && *argv[i] <= 'z') ||
-					(*argv[i] >= 'a' && *argv[i] <= 'z'))
+			if (!(isdigit(argv[i])))
 			{
 				printf("Error\n");
 				return (1);
