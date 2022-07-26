@@ -15,28 +15,33 @@ char *str_concat(char *s1, char *s2)
 	unsigned int len1 = 0, len2 = 0;
 	char *str;
 
+	if (s1 == NULL && s2 == NULL)
+		return (NULL);
+	if (s1 == NULL)
+		S1 = "";
 	while (s1[i])
 	{
 		len1++;
 		i++;
 	}
+	if (s2 == NULL)
+		s2 = "";
 	while (s2[j])
 	{
 		len2++;
 		j++;
 	}
-	if (s1 == NULL && s2 == NULL)
-		return (NULL);
 	str = malloc(sizeof(char) * (len1 + len2 + 1));
 	if (str == NULL)
 		return (NULL);
-	for (m = 0; m <= (len1 + len2); m++)
+	for (m = 0; m < (len1 + len2); m++)
 	{
 		if (m < len1)
 			str[m] = s1[m];
 		else
 			str[m] = s2[m];
 	}
+	str[m] = '\0';
 	return (str);
 }
 
