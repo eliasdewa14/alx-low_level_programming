@@ -14,13 +14,15 @@ char *_strdup(char *str)
 	unsigned int i = 0, len = 0, j;
 	char *s;
 
+	if (str == NULL)
+		return (NULL);
 	while (str[i])
 	{
 		len++;
 		i++;
 	}
 	s = malloc(sizeof(char) * (len + 1));
-	if (s == NULL || str == 0)
+	if (s == NULL)
 		return (NULL);
 	for (j = 0; j <= len; j++)
 		s[j] = str[j];
