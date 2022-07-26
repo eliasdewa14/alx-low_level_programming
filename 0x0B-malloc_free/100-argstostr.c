@@ -38,6 +38,7 @@ char *argstostr(int ac, char **av)
 			m++;
 			j++;
 		}
+		str[m] = '\n';
 		m++;
 		i++;
 	}
