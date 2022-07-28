@@ -7,6 +7,8 @@
  * @s1: input pointer string
  * @s2: input pointer string
  * @n: input unsigned integer
+ *
+ * Return: a pointer of characters
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
