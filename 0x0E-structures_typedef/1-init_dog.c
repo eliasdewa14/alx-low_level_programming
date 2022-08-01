@@ -2,8 +2,8 @@
 #include <stdlib.h>
 
 /**
- * int_dog - function that initialize a variable of type struct dog
- * @d: input structure
+ * init_dog - function that initialize a variable of type struct dog
+ * @d: struct initialization
  * @name: input name of dog
  * @age: age of dog
  * @owner: owner of dog
