@@ -1,5 +1,5 @@
 #ifndef _DOG_H_
-#define _GOD_H_
+#define _DOG_H_
 
 struct dog
 {
