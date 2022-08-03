@@ -12,11 +12,10 @@
  */
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
-	int i;
-	void (*fparr[size])(int, size);
+	unsigned int i;
 
-	fparr[size] = action;
-	fparr[size](array, size);
+	if (action == NULL)
+		return;
 	for (i = 0; i < size; i++)
-		printf("%d", array[i]);
+		action(array[i]);
 }
