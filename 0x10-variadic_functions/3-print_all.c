@@ -38,7 +38,8 @@ void print_all(const char * const format, ...)
 				printf("%s", str);
 				break;
 		}
-		if (format[i])
+		if (format[i] == 'c' || format[i] == 'i' || format[i] == 'f'
+				|| format[i] == 's')
 			printf(", ");
 	}
 	printf("\n");
