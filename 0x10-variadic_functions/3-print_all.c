@@ -18,6 +18,8 @@ void print_all(const char * const format, ...)
 	if (format == NULL)
 		return;
 	va_start(ap, format);
+	while (format == NULL)
+		return;
 	for (i = 0; format[i]; i++)
 	{
 		switch (format[i])
