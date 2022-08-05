@@ -15,11 +15,12 @@ void print_all(const char * const format, ...)
 	int i;
 	char *str;
 
-	if (format == NULL)
-		return;
 	va_start(ap, format);
 	while (format == NULL)
+	{
+		printf("\n");
 		return;
+	}
 	for (i = 0; format[i]; i++)
 	{
 		switch (format[i])
@@ -44,6 +45,6 @@ void print_all(const char * const format, ...)
 				|| format[i] == 's') && format[i + 1])
 			printf(", ");
 	}
-	printf("\n");
 	va_end(ap);
+	printf("\n");
 }
