@@ -7,22 +7,19 @@
  */
 int main(void)
 {
-	int i;
-	unsigned long a, b, c;
+	int i = 0;
+	unsigned long fib[50], sum = 2;
+	
+	fib[0] = 1;
+	fib[1] = 2;
 
-	i = 0;
-	a = 0;
-	b = 1;
-	while (i <= 98)
+	while (i <= 49)
 	{
-		c = a + b;
-		a = b;
-		b = c;
-		printf("%lu", c);
-		if (i != 98)
-			printf(", ");
+		fib[i] = fib[i - 1] + fib[i - 2];
+		if (fib[i] % 2 == 0 && fib[i] < 4000000)
+			sum += fib[i];
 		i++;
 	}
-	printf("\n");
+	printf("%d\n", sum);
 	return (0);
 }
