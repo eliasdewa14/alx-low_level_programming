@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * print_list - print  a linkd list
+ * print_list - print a linkd list
  * @h: pointer to head of list
  *
  * Return: number of nodes
