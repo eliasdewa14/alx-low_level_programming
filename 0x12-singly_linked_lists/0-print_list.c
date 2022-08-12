@@ -2,14 +2,14 @@
 #include <stdio.h>
 
 /**
- * print_list - print  a linkd list
+ * print_list - print a linkd list
  * @h: pointer to head of list
  *
  * Return: number of nodes
  */
 size_t print_list(const list_t *h)
 {
-	size_t n = 0;
+	unsigned int n = 0;
 
 	while (h)
 	{
