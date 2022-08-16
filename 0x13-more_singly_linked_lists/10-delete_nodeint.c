@@ -9,7 +9,7 @@
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-	unsigned int i = 0;
+	unsigned int i = 1;
 	listint_t *del_node, *temp;
 
 	if (*head == NULL)
