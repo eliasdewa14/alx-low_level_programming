@@ -9,9 +9,8 @@
  */
 int clear_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned long int num = 1;
+	unsigned long int num = 1 << index;
 
-	num <<= index;
 	if (num == 0)
 		return (-1);
 	*n &= ~num;
