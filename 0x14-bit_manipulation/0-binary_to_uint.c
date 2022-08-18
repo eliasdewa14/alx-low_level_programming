@@ -19,16 +19,11 @@ unsigned int binary_to_uint(const char *b)
 	}
 	while (len--)
 	{
-		if (b[len] == '0' || b[len] == '1')
-		{
-			if (b[len] == '1')
-				sum += 1;
-			n *= 2;
-		}
-		else
-		{
+		if (b[len] != '0' && b[len] != '1')
 			return (0);
-		}
+		if (b[len] == '1')
+			sum += 1;
+		n *= 2;
 	}
 	return (sum);
 }
