@@ -13,7 +13,7 @@ int append_text_to_file(const char *filename, char *text_content)
 
 	if (filename == NULL)
 		return (-1);
-	
+
 	fop = open(filename, O_RDWR | O_APPEND);
 	if (fop <= 0)
 		return (-1);
@@ -22,13 +22,10 @@ int append_text_to_file(const char *filename, char *text_content)
 		for (i = 0; text_content[i]; i++)
 			len++;
 		fwr = write(fop, text_content, len);
-
+		close(fop);
 		if (fwr <= 0)
-		{
-			close(fop);
 			return (-1);
-		}
 	}
-	close (fop);
+	close(fop);
 	return (1);
 }
