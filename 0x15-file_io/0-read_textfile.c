@@ -1,8 +1,7 @@
 #include "main.h"
 
 /**
- * read_textfile - function that reads a text file and prints it to the
- * POSIX standard output
+ * read_textfile - function that reads a text file and prints it
  * @filename: file name
  * @letters: the number of letters
  * Return: 1 for success or -1 for failure
@@ -20,14 +19,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 
 	fop = open(filename, O_RDONLY);
-	if (fop <= 0)
+	if (fop < 0)
 	{
 		free(buffer);
 		return (0);
 	}
 
 	frd = read(fop, buffer, letters);
-	if (frd <= 0)
+	if (frd < 0)
 	{
 		free(buffer);
 		return (0);
@@ -35,7 +34,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	fwr = write(STDOUT_FILENO, buffer, frd);
 	free(buffer);
-
 	close(fop);
 
 	if (fwr <= 0)
