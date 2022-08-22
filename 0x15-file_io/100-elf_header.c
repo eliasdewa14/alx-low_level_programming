@@ -9,7 +9,6 @@
  */
 int main(int argc, char *argv[])
 {
-	printf("%i, %p\n", argc, (void *)*argv);
-	system("readelf -a ubuntu64");
+	printf("argc:%i, argv:%p\n", argc, (void *)*argv);
 	return (1);
 }

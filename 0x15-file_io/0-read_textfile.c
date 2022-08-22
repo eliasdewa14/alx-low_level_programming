@@ -13,7 +13,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	int fop, frd, fwr;
 	char *buffer;
 
-
 	if (filename == NULL)
 		return (0);
 
@@ -42,5 +41,5 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	if (fwr <= 0)
 		return (0);
-	return (fwr);
+	return ((ssize_t)fwr);
 }
