@@ -1,59 +1,98 @@
-# 0x18. C - Dynamic libraries
+# 0x1A. C - Hash tables
 
+# More Info
+
+# Data Structures
+
+Please use these data structures for this project:
+
+        /**
+         * struct hash_node_s - Node of a hash table
+         *
+         * @key: The key, string
+         * The key is unique in the HashTable
+         * @value: The value corresponding to a key
+         * @next: A pointer to the next node of the List
+         */
+        typedef struct hash_node_s
+        {
+             char *key;
+             char *value;
+             struct hash_node_s *next;
+        } hash_node_t;
+
+        /**
+         * struct hash_table_s - Hash table data structure
+         *
+         * @size: The size of the array
+         * @array: An array of size @size
+         * Each cell of this array is a pointer to the first node of a linked list,
+         * because we want our HashTable to use a Chaining collision handling
+         */
+        typedef struct hash_table_s
+        {
+             unsigned long int size;
+             hash_node_t **array;
+        } hash_table_t;
+
+# Tests
+
+We strongly encourage you to work all together on a set of tests
+
+# Python Dictionaries
+
+Python dictionaries are implemented using hash tables. When you will be done with this project, you will be able to better understand the power and simplicity of Python dictionaries. So much is actually happening when you type d = {'a': 1, 'b': 2}, but everything looks so simple for the user. Python doesn’t use the exact same implementation than the one you will work on today though. If you are curious on how it works under the hood, here is a good blog post about how dictionaries are implemented in Python 2.7 (not mandatory).
+
+Note that all dictionaries are not implemented using hash tables and there is a difference between a dictionary and a hash table. Read more here (not mandatory).
 # Mandatory and advanced tasks
 
-0. Create the dynamic library libdynamic.so containing all the functions listed below:
+0. Write a function that creates a hash table.
 
-        int _putchar(char c);
-        int _islower(int c);
-        int _isalpha(int c);
-        int _abs(int n);
-        int _isupper(int c);
-        int _isdigit(int c);
-        int _strlen(char *s);
-        void _puts(char *s);
-        char *_strcpy(char *dest, char *src);
-        int _atoi(char *s);
-        char *_strcat(char *dest, char *src);
-        char *_strncat(char *dest, char *src, int n);
-        char *_strncpy(char *dest, char *src, int n);
-        int _strcmp(char *s1, char *s2);
-        char *_memset(char *s, char b, unsigned int n);
-        char *_memcpy(char *dest, char *src, unsigned int n);
-        char *_strchr(char *s, char c);
-        unsigned int _strspn(char *s, char *accept);
-        char *_strpbrk(char *s, char *accept);
-        char *_strstr(char *haystack, char *needle);
+        Prototype: hash_table_t *hash_table_create(unsigned long int size);
+                where size is the size of the array
+        Returns a pointer to the newly created hash table
+        If something went wrong, your function should return NULL
 
-1. Create a script that creates a dynamic library called liball.so from all the .c files that are in the current directory.
+1. Write a hash function implementing the djb2 algorithm.
 
+        Prototype: unsigned long int hash_djb2(const unsigned char *str);
+        You are allowed to copy and paste the function from this page
 
-2. I know, you’re missing C when coding in Python. So let’s fix that!
-   Create a dynamic library that contains C functions that can be called from Python. See example for more detail.
+2. Write a function that gives you the index of a key.
+
+        Prototype: unsigned long int key_index(const unsigned char *key, unsigned long int size);
+                where key is the key
+                and size is the size of the array of the hash table
+        This function should use the hash_djb2 function that you wrote earlier
+        Returns the index at which the key/value pair should be stored in the array of the hash table
+        You will have to use this hash function for all the next tasks
    
-3. I bought a ticket for the Giga Millions and chose these numbers: 9, 8, 10, 24, 75 + 9. If you could run two commands on the same server where the Giga Millions program runs, could you make me win the Jackpot?
-Our mole got us a copy of the program, you can download it here. Our mole also gave us a piece of documentation:
+3. Write a function that adds an element to the hash table.
 
-        /* Giga Millions program                                                                                    
-          * Players may pick six numbers from two separate pools of numbers:                                                
-          * - five different numbers from 1 to 75 and                                                                       
-          * - one number from 1 to 15                                                                                       
-          * You win the jackpot by matching all six winning numbers in a drawing.                                           
-          * Your chances to win the jackpot is 1 in 258,890,850                                                             
-          *                                                                                                                 
-          * usage: ./gm n1 n2 n3 n4 n5 bonus
-          
-          
-        You can’t modify the program gm itself as Master Sysadmin Sylvain (MSS) always checks its MD5 before running it
-        The system is an Linux Ubuntu 16.04
-        The server has internet access
-        Our mole will be only able to run two commands from a shell script, without being detected by MSS
-        Your shell script should be maximum 3 lines long. You are not allowed to use ;, &&, ||, |, ` (it would be detected by MSS), and have a maximum of two commands
-        Our mole has only the authorization to upload one file on the server. It will be your shell script
-        Our mole will run your shell script this way: mss@gm_server$ . ./101-make_me_win.sh
-        Our mole will run your shell script from the same directory containing the program gm, exactly 98 seconds before MSS runs gm with my numbers: ./gm 9 8 10 24 75 9
-        MSS will use the same terminal and session than our mole
-        Before running the gm program, MSS always check the content of the directory
-        MSS always exit after running the program gm
-        TL;DR; This is what is going to happen
+        Prototype: int hash_table_set(hash_table_t *ht, const char *key, const char *value);
+                Where ht is the hash table you want to add or update the key/value to
+                key is the key. key can not be an empty string
+                and value is the value associated with the key. value must be duplicated. value can be an empty string
+        Returns: 1 if it succeeded, 0 otherwise
+        In case of collision, add the new node at the beginning of the list
 
+4. Write a function that retrieves a value associated with a key.
+
+        Prototype: char *hash_table_get(const hash_table_t *ht, const char *key);
+                where ht is the hash table you want to look into
+                and key is the key you are looking for
+        Returns the value associated with the element, or NULL if key couldn’t be found
+        
+5. Write a function that prints a hash table.
+
+        Prototype: void hash_table_print(const hash_table_t *ht);
+                where ht is the hash table
+        You should print the key/value in the order that they appear in the array of hash table
+                Order: array, list
+        Format: see example
+        If ht is NULL, don’t print anything
+
+6. Write a function that deletes a hash table.
+
+        Prototype: void hash_table_delete(hash_table_t *ht);
+                where ht is the hash table
