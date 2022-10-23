@@ -21,16 +21,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		while (head)
 		{
-			if (strcmp(head->key, key) != 0)
-			{
-				head = head->next;
-			}
-			else
+			if (strcmp(head->key, key) == 0)
 			{
 				free(head->value);
 				head->value = strdup(value);
 				return (1);
 			}
+			head = head->next;
 		}
 	}
 	head = ht->array[index];
